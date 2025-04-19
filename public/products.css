@@ -1,0 +1,189 @@
+/* Products Page (products.html) */
+.products-page {
+    padding: 50px 0;
+    background-color: #f3f3f3;
+    flex: 1; /* Ensure the section takes up remaining space to push footer down */
+}
+
+.products-page-content {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px; /* จำกัดความกว้างของเนื้อหาทั้งหมด */
+    margin: 0 auto; /* จัดกึ่งกลาง */
+    box-sizing: border-box;
+}
+
+.categories-sidebar {
+    flex: 0 0 250px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.categories-title {
+    font-size: 24px;
+    color: #ffffff;
+    background-color: #ff6200;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.categories-list {
+    list-style: none;
+}
+
+.categories-list li {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.categories-list a {
+    text-decoration: none;
+    color: #2b2b2b;
+    font-size: 18px;
+    transition: color 0.3s;
+    display: inline-block; /* ครอบเฉพาะข้อความ ไม่เต็มแถว */
+    background-color: #ffffff; /* กรอบสีขาว */
+    padding: 5px 10px; /* ระยะห่างรอบข้อความ */
+    border-radius: 5px; /* มุมโค้งของกรอบ */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เงาเล็กน้อย */
+}
+
+.categories-list a:hover,
+.categories-list a.active {
+    color: #df0023;
+    background-color: #f0f0f0; /* เปลี่ยนสีพื้นหลังเมื่อ hover หรือ active */
+}
+
+.products-main {
+    flex: 1;
+    box-sizing: border-box;
+    overflow: hidden; /* ป้องกันเนื้อหาล้น */
+}
+
+.products-main h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #2b2b2b;
+    text-transform: uppercase;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 280px)); /* ขนาดคงที่ 280px */
+    gap: 20px;
+    justify-content: left; /* จัดกึ่งกลาง */
+    max-width: 100%; /* ให้อยู่ในขอบเขตของ parent */
+    box-sizing: border-box;
+}
+
+.product-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: center;
+    width: 280px; /* ขนาดคงที่ */
+    height: 350px; /* ความสูงคงที่ */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+}
+
+.product-item img {
+    width: 100%;
+    height: 200px; /* ความสูงคงที่ของรูปภาพ */
+    object-fit: cover;
+}
+
+.product-item h3 {
+    font-size: 20px;
+    padding: 15px;
+    color: #2b2b2b;
+    text-transform: uppercase;
+    margin: 0;
+    border-top: 1px solid #eee;
+    flex-grow: 1; /* ขยายเพื่อเติมพื้นที่ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-item p {
+    font-size: 16px;
+    padding: 0 15px 15px;
+    color: #666;
+    margin: 0;
+}
+
+/* Responsive Design for Products Page */
+@media (max-width: 768px) {
+    .products-page-content {
+        flex-direction: column;
+        padding: 0 15px; /* เพิ่ม padding เพื่อป้องกันการติดขอบ */
+    }
+
+    .categories-sidebar {
+        flex: 1;
+    }
+
+    .categories-title {
+        font-size: 20px;
+    }
+
+    .categories-list a {
+        font-size: 16px;
+    }
+
+    .products-main {
+        overflow: visible; /* ป้องกันการตัดเนื้อหาในมือถือ */
+    }
+
+    .products-main h2 {
+        font-size: 28px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 280px)); /* รักษาขนาด */
+        gap: 15px;
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    .product-item {
+        width: 280px; /* รักษาขนาดคงที่ */
+        height: 350px; /* รักษาความสูง */
+    }
+
+    .product-item h3 {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .product-item p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    .products-grid {
+        grid-template-columns: 1fr; /* ใช้ 1 คอลัมน์ในหน้าจอเล็กมาก */
+        justify-items: center; /* จัดกึ่งกลาง */
+    }
+
+    .product-item {
+        width: 100%; /* ปรับให้เต็มความกว้างในหน้าจอเล็ก */
+        max-width: 280px; /* จำกัดขนาดสูงสุด */
+        height: 350px;
+    }
+}

@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+body {
+    background-color: #f3f3f3;
+    color: #2b2b2b;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background-color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #0443af;
+}
+
+/* เพิ่มหรือแก้ใน styles2.css */
+nav ul {
+    display: flex;
+    align-items: center; /* รักษาการจัดกึ่งกลางแนวตั้ง */
+    gap: 20px; /* คงค่าเดิม */
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2b2b2b;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative; /* ใช้เพื่อควบคุมตำแหน่ง */
+    top: 8px; /* ขยับข้อความลง 5px */
+    /* หากต้องการขยับขึ้น ใช้ top: -5px; */
+}
+nav a:hover {
+    color: #0443af;
+}
+/* Main Image */
+.img-center {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+/* Product Gallery */
+.product-gallery {
+    padding: 50px 0;
+    background-color: #ffffff;
+}
+
+.product-gallery h2 {
+    font-size: 36px;
+    color: #2b2b2b;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.carousel {
+    max-width: 100%;
+}
+
+/* ปรับขนาดรูปภาพให้เป็นกล่องเท่ากัน */
+.carousel-item img {
+    /* ปรับ width กับ height เพื่อแก้ขนาดรูปที่วิ่งด้านล่าง */
+    width: 700px; /* ความกว้างคงที่ */
+    height: 400px; /* ความสูงคงที่ */
+    object-fit: cover; /* ครอบภาพให้เต็มกล่อง */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* จัดกึ่งกลาง */
+}
+
+/* ปรับแต่งปุ่มควบคุม */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%; /* ใหญ่ขึ้น */
+    background-color: rgba(0, 0, 0, 0.4); /* พื้นหลังเข้มขึ้น */
+    border-radius: 50%;
+    height: 80px; /* ใหญ่ขึ้น */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #b22222; /* ส้มเข้ม */
+    border-radius: 50%;
+    padding: 25px; /* ไอคอนใหญ่ขึ้น */
+    background-size: 60% 60%; /* ปรับขนาดลูกศร */
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: #b22222; /* แดงเข้มเมื่อ hover */
+}
+
+/* ปรับแต่งจุดควบคุม */
+.carousel-indicators {
+    bottom: -60px; /* ขยับลงเพื่อรองรับขนาดใหญ่ */
+    background-color: #9c9c9c;
+}
+
+.carousel-indicators button {
+    width: 18px;
+    height: 18px;
+    border-radius: 0; /* สี่เหลี่ยม */
+    background-color: #000000; /* เทาอ่อนสำหรับจุดที่ไม่ active */
+    border: none;
+    margin: 0 8px;
+    transition: background-color 0.3s;
+    opacity: 1; /* ทำให้มองเห็นชัด */
+}
+
+.carousel-indicators .active {
+    background-color: #141212; /* สีดำเมื่อ active */
+}
+
+
+
+/* Image Centering */
+.img-center {
+    display: flex;
+    justify-content: center;
+}
+
+/* Footer */
+footer {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #4384f5;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .img-center img {
+        max-width: 90%;
+    }
+
+    .product-gallery h2 {
+        font-size: 28px;
+    }
+
+    .carousel-item img {
+        width: 300px;
+        height: 225px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%;
+        height: 60px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        padding: 20px;
+        background-size: 50% 50%;
+    }
+
+    .carousel-indicators button {
+        width: 14px;
+        height: 14px;
+        margin: 0 6px;
+    }
+
+    .contact h2 {
+        font-size: 28px;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info,
+    .contact-map {
+        width: 100%;
+    }
+
+    .contact-map iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 360px) {
+    .img-center img {
+        max-width: 100%;
+    }
+
+    .product-gallery h2 {
+        font-size: 24px;
+    }
+
+    .carousel-item img {
+        width: 250px;
+        height: 187px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 12%;
+        height: 50px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        padding: 15px;
+    }
+
+    .carousel-indicators button {
+        width: 12px;
+        height: 12px;
+        margin: 0 5px;
+    }
+}
